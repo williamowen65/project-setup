@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const rippleSpeed = [450, 0.45]
 
-export default function Button({ children, onPress }) {
+export default function Button({ children, onPress, id }) {
 
   const handleClick = (e) => {
     console.log(e);
@@ -18,12 +18,12 @@ export default function Button({ children, onPress }) {
     // document.querySelector("button").insertAdjacentHTML("")
     setTimeout(() => {
       ripples.remove()
-      // onPress()
+      onPress(e)
     }, rippleSpeed[0])
   }
 
   return (
-    <ButtonStyle onClick={handleClick}>{children}</ButtonStyle>
+    <ButtonStyle onClick={handleClick} id={id}>{children}</ButtonStyle>
   )
 }
 

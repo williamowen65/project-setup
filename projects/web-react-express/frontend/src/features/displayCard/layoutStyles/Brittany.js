@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import img from '../assets/random.jpg'
 import configValues from '../../../data/configValues.json'
@@ -8,6 +8,7 @@ import { Gi3DMeeple, GiAbstract001 } from 'react-icons/gi'
 
 export default function Brittany({ data }) {
   const screenWidth = useSelector(state => state.app.screenWidth)
+  const [imgGrayScale, setImgGrayScale] = useState(false)
   // const iconStyle = {
   //   cursor: "pointer"
   // }
@@ -19,7 +20,7 @@ export default function Brittany({ data }) {
       <BrittanyStyled screenWidth={screenWidth}>
         <div className={screenWidth > configValues.breakpoints.slim ? "header" : "header mobile"}>
           <span className="pre">Feature Project</span>
-          <span className={screenWidth > configValues.breakpoints.slim ? "title" : "title mobile"}>{data.title}</span>
+          <span className={screenWidth > configValues.breakpoints.slim ? "title" : "title mobile"} onMouseOver={() => setImgGrayScale(!imgGrayScale)}>{data.title}</span>
           <span className="emptySpace"></span>
         </div>
         <ImgDiv src={data.img} className={screenWidth > configValues.breakpoints.slim ? "imgWrapper" : "imgWrapper mobile"} />

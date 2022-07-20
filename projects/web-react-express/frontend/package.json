@@ -7,7 +7,7 @@
     "build": "webpack",
     "build-dark": "webpack --env dark=true",
     "dev": "webpack-dev-server",
-    "install": "npm i @babel/core @babel/preset-env babel-loader url-loader webpack webpack-cli webpack-dev-server html-webpack-plugin @babel/preset-react style-loader css-loader sass-loader sass @testing-library/jest-dom @testing-library/react @testing-library/user-event -D && npm i react react-dom react-router-dom styled-components react-icons react-redux @reduxjs/toolkit && npm i react-use-dimensions --legacy-peer-deps"
+    "install": "npm i @babel/core @babel/preset-env babel-loader url-loader webpack webpack-cli webpack-dev-server html-webpack-plugin @babel/preset-react style-loader css-loader sass-loader sass @testing-library/jest-dom @testing-library/react @testing-library/user-event -D && npm i react react-dom react-router-dom styled-components react-icons react-redux @reduxjs/toolkit && npm i react-use-dimensions gsap-bonus.tgz --legacy-peer-deps"
   },
   "keywords": [],
   "author": "",
