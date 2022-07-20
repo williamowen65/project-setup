@@ -1,3 +1,5 @@
+import createCopy from './createCopy.js';
+
 import chalk from 'chalk'
 import inquirer from 'inquirer';
 import { createSpinner } from 'nanospinner';
@@ -51,6 +53,7 @@ export async function askName() {
 }
 
 export async function selectProject(projects) {
+
   const answers = await inquirer.prompt({
     name: "selected_project",
     type: 'list',
@@ -68,12 +71,19 @@ export async function selectProject(projects) {
 }
 
 async function handleAnswer() {
-  const spinner = createSpinner("Setting up backend..").start()
+  const spinner = createSpinner("Setting up backend...").start()
   await sleep()
+  const answers = getConfig().answers
+  console.log(answers);
+
   spinner.success({ text: 'nice work' })
 }
 
 
 export function getConfig() {
   return projectConfig
+}
+
+export async function createProject(answers) {
+  createCopy(answers.selected_project, process.argv[1], answers.project_name)
 }

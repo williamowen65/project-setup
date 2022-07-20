@@ -6,8 +6,10 @@ import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
 
-export default function createCopy() {
-  fs.copy(path.resolve(process.argv[1] + "/../../web-react-express"), path.resolve('./new-project'), (res) => {
+export default function createCopy(project = "web-react-express", projectsUrl, name) {
+  // console.log(process.argv);
+  // console.log(path.resolve(`${projectsUrl}/../../projects/${project}`));
+  fs.copy(path.resolve(`${projectsUrl}/../../projects/${project}`), path.resolve(`./${name.toLowerCase()}`), (res) => {
     console.log('done');
   })
 }
